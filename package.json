@@ -1,0 +1,30 @@
+{
+  "name": "gulp-livereload-sample-project",
+  "version": "0.1.0",
+  "description": "gulp livereload sample",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coswind/gulp-livereload-sample-project.git"
+  },
+  "author": "coswind",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/coswind/gulp-livereload-sample-project/issues"
+  },
+  "homepage": "https://github.com/coswind/gulp-livereload-sample-project",
+  "dependencies": {
+    "gulp": "~3.6.0",
+    "coffee-script": "~1.7.1",
+    "node-static": "~0.7.3",
+    "gulp-livereload": "~1.2.0",
+    "gulp-embedlr": "~0.5.2",
+    "gulp-jade": "~0.4.2",
+    "coffeeify": "~0.6.0",
+    "gulp-browserify": "~0.5.0",
+    "gulp-rename": "~1.2.0"
+  }
+}
