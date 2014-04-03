@@ -1,26 +1,30 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = '{{~it : text}}\n<p>hoho {{=text}}</p>\n{{~}}\n';
+},{}],2:[function(require,module,exports){
 require('./test');
 
 require('./dom');
 
 
-},{"./dom":2,"./test":3}],2:[function(require,module,exports){
-var $, doT, tempFn;
+},{"./dom":3,"./test":4}],3:[function(require,module,exports){
+var $, aTpl, doT, tempFn;
 
 $ = require('jquery');
 
 doT = require('dot');
 
-tempFn = doT.template('{{~it :text}}<p>{{=text}}</p>{{~}}');
+aTpl = require('./../build/template/a');
+
+tempFn = doT.template(aTpl);
 
 $('body').append(tempFn(['coswind', 'xiayi', 'hello', 'world']));
 
 
-},{"dot":5,"jquery":7}],3:[function(require,module,exports){
+},{"./../build/template/a":1,"dot":6,"jquery":8}],4:[function(require,module,exports){
 console.log('test file');
 
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 // doT.js
 // 2011, Laura Doktorova, https://github.com/olado/doT
 // Licensed under the MIT license.
@@ -157,7 +161,7 @@ console.log('test file');
 	};
 }());
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /* doT + auto-compilation of doT templates
  *
  * 2012, Laura Doktorova, https://github.com/olado/doT
@@ -302,9 +306,9 @@ InstallDots.prototype.compileAll = function() {
 	return this.__rendermodule;
 };
 
-},{"./doT":4,"fs":6}],6:[function(require,module,exports){
+},{"./doT":5,"fs":7}],7:[function(require,module,exports){
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.0
  * http://jquery.com/
@@ -9417,4 +9421,4 @@ return jQuery;
 
 }));
 
-},{}]},{},[1])
+},{}]},{},[2])

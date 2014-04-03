@@ -1,1 +1,1 @@
-module.exports = '<p>{{=it.text}}</p>';
+module.exports = '{{~it : text}}\n<p>hoho {{=text}}</p>\n{{~}}\n';

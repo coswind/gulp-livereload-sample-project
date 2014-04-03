@@ -1,7 +1,8 @@
 $ = require 'jquery'
 doT = require 'dot'
+aTpl = require './../build/template/a'
 
-tempFn = doT.template '{{~it :text}}<p>{{=text}}</p>{{~}}'
+tempFn = doT.template aTpl
 
 $('body').append(tempFn [
         'coswind',

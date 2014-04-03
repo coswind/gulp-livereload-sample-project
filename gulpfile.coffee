@@ -44,5 +44,6 @@ gulp.task 'watch', ['jade', 'staticserver'], ->
     server = livereload()
     gulp.watch 'layout/**', ['jade']
     gulp.watch 'coffee/**', ['coffee']
+    gulp.watch 'template/**', ['template', 'coffee']
     gulp.watch('build/**').on 'change', (file) ->
         server.changed file.path
