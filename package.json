@@ -25,6 +25,12 @@
     "gulp-jade": "~0.4.2",
     "coffeeify": "~0.6.0",
     "gulp-browserify": "~0.5.0",
-    "gulp-rename": "~1.2.0"
+    "gulp-rename": "~1.2.0",
+    "jquery": "~2.1.0",
+    "dot": "~1.0.2",
+    "string-to-js": "0.0.1",
+    "through2": "~0.4.1",
+    "event-stream": "~3.1.1",
+    "gulp-util": "~2.2.14"
   }
 }

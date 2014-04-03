@@ -3,6 +3,8 @@ livereload = require 'gulp-livereload'
 jade = require 'gulp-jade'
 browserify = require 'gulp-browserify'
 rename = require 'gulp-rename'
+stringToJs = require 'string-to-js'
+gutil = require 'gulp-util'
 
 gulp.task 'default'
 
@@ -21,6 +23,24 @@ gulp.task 'coffee', ->
             })
         .pipe(rename 'app.js')
         .pipe(gulp.dest 'build/js')
+
+gulp.task 'template', ->
+    fs = require 'fs'
+    es = require 'event-stream'
+    gulp.src 'template/**'
+        .pipe es.through (file)->
+            if file.isNull()
+                this.emit 'data', file
+                return
+            if file.isStream()
+                this.emit 'error', new Error 'Streaming not supported'
+                return
+            data = stringToJs file.contents.toString('utf8')
+            dest = gutil.replaceExtension file.path, '.js'
+            file.contents = new Buffer(data)
+            file.path = dest
+            this.emit 'data', file
+        .pipe(gulp.dest 'build/template')
 
 gulp.task 'staticserver', ->
     staticS = require 'node-static'
